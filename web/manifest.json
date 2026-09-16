@@ -1,0 +1,9 @@
+{
+  "name": "Nourish Super Shop",
+  "short_name": "Nourish",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1F7A4D",
+  "description": "A fresh, friendly super shop catalogue."
+}
