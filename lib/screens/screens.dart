@@ -130,6 +130,32 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: const Text('Home Delivery Available'),
+              content: const Text(
+                'Call: 01313921708',
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('Close'),
+                ),
+              ],
+            ),
+          );
+        },
+        backgroundColor: const Color(0xFF0C3828),
+        foregroundColor: Colors.white,
+        icon: const Icon(Icons.delivery_dining),
+        label: const Text(
+          'Home Delivery',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(
