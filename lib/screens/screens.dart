@@ -127,33 +127,38 @@ class Shell extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  // 01313921708
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: const Text('Home Delivery Available'),
-              content: const Text(
-                'Call: 01313921708',
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(top: 75, right: 4),
+        child: FloatingActionButton.extended(
+          heroTag: 'home_delivery_button',
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: const Text('Home Delivery Available'),
+                content: const Text('Call: 01313921708'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text('Close'),
+                  ),
+                ],
               ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Close'),
-                ),
-              ],
-            ),
-          );
-        },
-        backgroundColor: const Color(0xFF0C3828),
-        foregroundColor: Colors.white,
-        icon: const Icon(Icons.delivery_dining),
-        label: const Text(
-          'Home Delivery',
-          style: TextStyle(fontWeight: FontWeight.bold),
+            );
+          },
+          backgroundColor: const Color(0xFF0C3828),
+          foregroundColor: Colors.white,
+          icon: const Icon(Icons.delivery_dining),
+          label: const Text(
+            'Home Delivery',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ),
       ),
       body: CustomScrollView(
